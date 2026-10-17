@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Question, ExamState } from '@/lib/types';
 import QuestionPalette from './QuestionPalette';
 import ConfirmDialog from './ConfirmDialog';
+import FormattedContent from './FormattedContent';
 
 interface ExamScreenProps {
   questions: Question[];
@@ -215,10 +216,10 @@ export default function ExamScreen({
 
         {/* Question Content */}
         <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 md:p-8 mb-6">
-          {/* Scenario */}
+          {/* Scenario / Table Content */}
           {currentQuestion.scenario && (
-            <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl mb-6">
-              <p className="text-slate-700 leading-relaxed text-base">{currentQuestion.scenario}</p>
+            <div className="bg-slate-50 border border-slate-200 p-5 rounded-xl mb-6">
+              <FormattedContent content={currentQuestion.scenario} />
             </div>
           )}
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { ExamMetadata } from '@/lib/types';
 
@@ -41,23 +43,6 @@ export default function StartScreen({
             <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">Total Marks: <span className="font-semibold text-slate-900">{exam.totalMarks}</span></div>
             <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">Pass Marks: <span className="font-semibold text-slate-900">{exam.passMarks}</span></div>
           </div>
-        </div>
-
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">Instructions</h2>
-          <ul className="list-disc list-inside space-y-2 text-slate-700">
-            {exam.title === "Foundations Final Exam: Mock Simulation" ? (
-              <>
-                <li>This exam has <strong className="text-slate-900">60 scenario-based questions</strong> and a <strong className="text-slate-900">2-hour</strong> time limit.</li>
-                <li>Most questions have one correct answer. Questions marked <strong className="text-slate-900">(Select TWO)</strong> need both correct options to score.</li>
-                <li>Total marks: <strong className="text-slate-900">1000</strong>. Passing mark: <strong className="text-slate-900">720</strong>.</li>
-                <li>Click <strong className="text-slate-900">Save & Next</strong> after answering each question.</li>
-                <li>The exam submits automatically when the timer reaches zero.</li>
-              </>
-            ) : (
-              <>{/* Fallback to generic instructions if title differs */}</>
-            )}
-          </ul>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
